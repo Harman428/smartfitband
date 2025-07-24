@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step Counter – SmartFit Band</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      color: #0d47a1;
+      text-align: center;
+    }
+
+    /* NavBar */
+    nav {
+      background-color: #1565c0;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-top: 40px;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      color: #1565c0;
+    }
+
+    .step-box {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      display: inline-block;
+      min-width: 280px;
+      margin: 30px auto;
+    }
+
+    .step-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    .step-text {
+      font-size: 1.2em;
+      color: #0d47a1;
+    }
+
+    .step-count {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #00c853;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #1565c0;
+      font-size: 0.9em;
+      background-color: #e3f2fd;
+      padding: 20px;
+      border-top: 1px solid #90caf9;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="band.html">Home</a>
+    <a href="stepcounter.html">Step Tracker</a>
+    <a href="heart.html">Heart Rate</a>
+    <a href="#">Sleep Tracker</a>
+    <a href="#">Battery</a>
+    <a href="#">More</a>
+  </nav>
+
+  <h1>Step Counter</h1>
+  <p class="subtitle">Keep moving! Your steps are being tracked live.</p>
+
+  <div class="step-box">
+    <img class="step-icon" src="https://img.icons8.com/ios-filled/100/walking.png" alt="Step Icon">
+    <div class="step-text">Today's Steps:</div>
+    <div class="step-count" id="counter">0</div>
+  </div>
+
+  <footer>
+    &copy; 2025 All rights reserved. Designed by <strong>Harman Designer</strong>.
+  </footer>
+
+  <!-- Step Counter Animation -->
+  <script>
+    let count = 0;
+    const counter = document.getElementById('counter');
+    const interval = setInterval(() => {
+      if (count >= 8500) {
+        clearInterval(interval);
+      } else {
+        count += Math.floor(Math.random() * 30) + 10;
+        counter.textContent = count;
+      }
+    }, 50);
+  </script>
+</body>
+</html>

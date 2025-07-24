@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heart Rate – SmartFit Band</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      color: #0d47a1;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d47a1;
+      color: white;
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #90caf9;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      color: #1565c0;
+    }
+
+    .heart-box {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      display: inline-block;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .heart-icon {
+      font-size: 80px;
+      color: #e53935;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .bpm-label {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    .bpm-value {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #00c853;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #1565c0;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <nav>
+    <a href="band.html">Home</a>
+    <a href="stepcounter.html">Step Tracker</a>
+    <a href="heart.html">Heart Rate</a>
+    <a href="sleep-tracker.html">Sleep Tracker</a>
+    <a href="calorie.html">Calorie</a>
+  </nav>
+
+  <!-- 💓 MAIN SECTION -->
+  <h1>Heart Rate Monitor</h1>
+  <p class="subtitle">Your pulse is being tracked in real time.</p>
+
+  <div class="heart-box">
+    <div class="heart-icon">❤️</div>
+    <div class="bpm-label">Current BPM</div>
+    <div class="bpm-value" id="bpm">--</div>
+  </div>
+
+  <footer>
+    &copy; 2025 All rights reserved. Designed by <strong>Harman Designer</strong>.
+  </footer>
+
+  <script>
+    let bpmElement = document.getElementById('bpm');
+    function generateBPM() {
+      const bpm = Math.floor(Math.random() * 25) + 65;
+      bpmElement.textContent = bpm;
+    }
+
+    generateBPM();
+    setInterval(generateBPM, 2000);
+  </script>
+
+</body>
+</html>
