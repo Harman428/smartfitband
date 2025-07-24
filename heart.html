@@ -15,27 +15,23 @@
       padding-top: 100px;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #0d47a1;
-      color: white;
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
+nav {
+  background-color: #005bbb;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 0;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1em;
-      transition: color 0.3s;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  white-space: nowrap;  /* Prevent breaking into two lines */
+  font-weight: 500;
+}
+
 
     nav a:hover {
       color: #90caf9;
